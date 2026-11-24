@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Diyora Cake Boutique — tortlar va desertlar, Toshkent</title>
+<meta name="description" content="Diyora Cake Boutique: tortlar, trayfllar, Art Desert va buyurtma tortlar. Toshkent, Mirzo Ulug'bek. Yetkazib berish va olib ketish.">
+<meta property="og:title" content="Diyora Cake Boutique">
+<meta property="og:description" content="Tortlar, trayfllar, Art Desert · Toshkent">
+<meta property="og:image" content="cover.jpg">
+<meta name="theme-color" content="#f3d3df">
+<link rel="icon" href="icon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Parisienne&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#f3d3df; --pink2:#f9e6ed; --pinkd:#e7b6c8; --bg:#fffafb;
+  --gold:#b98c32; --gold2:#d9b45f; --ink:#1d1a1b; --mute:#7c6c72; --line:#efdde4;
+  --r:18px; --sh:0 6px 24px rgba(120,60,85,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:118px}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.45;padding-bottom:90px}
+img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit}
+.serif{font-family:Marcellus,serif;letter-spacing:.04em}
+.script{font-family:Parisienne,cursive}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(255,250,251,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:10px;height:58px}
+.brand{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.brand b{font-family:Marcellus,serif;font-weight:400;font-size:21px;letter-spacing:.28em;
+  background:linear-gradient(180deg,#e8c76f,#a77a22);-webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 0 #0000; filter:drop-shadow(0 1px 0 #1d1a1b)}
+.brand i{font-family:Parisienne,cursive;font-style:normal;font-size:15px;color:var(--ink);margin-top:2px;padding-left:2px}
+.sp{flex:1}
+.lang{display:flex;border:1px solid var(--line);border-radius:30px;overflow:hidden;background:#fff}
+.lang button{padding:6px 11px;font-size:12px;font-weight:700;color:var(--mute)}
+.lang button.on{background:var(--ink);color:#fff}
+.tg{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--pink2);text-decoration:none}
+.tg svg{width:19px;height:19px;fill:#2a8bd0}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:8px 16px 10px;scrollbar-width:none;max-width:1100px;margin:0 auto}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:8px 14px;border-radius:30px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:600;white-space:nowrap;text-decoration:none}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* hero */
+.hero{background:var(--pink);position:relative;overflow:hidden}
+.hero img{width:100%;max-width:900px;margin:0 auto;aspect-ratio:1280/711;object-fit:cover}
+.hero-txt{text-align:center;padding:6px 16px 26px;margin-top:-8px}
+.hero-txt p{color:#5b4a50;font-size:14.5px;max-width:520px;margin:0 auto 14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:40px;font-weight:700;font-size:14.5px;text-decoration:none}
+.btn-d{background:var(--ink);color:#fff}
+.btn-g{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#fff}
+.btn-l{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px auto 0}
+.fact{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:13px;color:var(--mute)}
+.fact b{display:block;color:var(--ink);font-size:13.5px;margin-bottom:2px}
+@media(min-width:760px){.facts{grid-template-columns:repeat(4,1fr)}}
+
+/* sections */
+section{padding:30px 0 6px}
+.sh{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.sh h2{font-family:Marcellus,serif;font-weight:400;font-size:25px;letter-spacing:.03em}
+.sh .script{color:var(--gold);font-size:22px}
+.sub{color:var(--mute);font-size:13.5px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+
+.card{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);display:flex;flex-direction:column}
+.ph{position:relative;aspect-ratio:1;background:var(--pink2);cursor:zoom-in}
+.ph img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:8px;top:8px;background:rgba(255,255,255,.92);border-radius:20px;padding:3px 9px;font-size:11px;font-weight:700}
+.cb{padding:10px 11px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cb h3{font-size:14.5px;font-weight:700;line-height:1.25}
+.meta{font-size:12px;color:var(--mute)}
+.vars{display:flex;flex-wrap:wrap;gap:5px}
+.var{padding:4px 9px;border-radius:20px;border:1px solid var(--line);font-size:11.5px;font-weight:600;color:var(--mute)}
+.var.on{border-color:var(--ink);color:var(--ink);background:var(--pink2)}
+.row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:6px}
+.price{font-weight:800;font-size:15px;white-space:nowrap}
+.price small{font-weight:600;font-size:11px;color:var(--mute)}
+.add{width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;font-size:21px;line-height:1;display:grid;place-items:center;flex:none}
+.qty{display:flex;align-items:center;background:var(--pink2);border-radius:30px}
+.qty button{width:32px;height:34px;font-size:18px;font-weight:700}
+.qty span{min-width:16px;text-align:center;font-weight:800;font-size:14px}
+
+/* custom cake */
+.custom{background:linear-gradient(160deg,#fff,var(--pink2));border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--sh)}
+.sizes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:8px 0 14px}
+.size{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:10px;text-align:left}
+.size b{display:block;font-size:14px}
+.size span{font-size:13px;color:var(--gold);font-weight:800}
+.size.on{border-color:var(--ink);box-shadow:0 0 0 2px var(--ink) inset}
+.fills{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 14px}
+.fill{padding:8px 12px;border-radius:30px;border:1.5px solid var(--line);background:#fff;font-size:13px;font-weight:600}
+.fill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+label.l{display:block;font-weight:700;font-size:13.5px;margin-top:4px}
+textarea,input,select{width:100%;font:inherit;font-size:16px;padding:11px 13px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--ink);outline:none}
+textarea:focus,input:focus,select:focus{border-color:var(--pinkd)}
+.note{font-size:12.5px;color:var(--mute);margin-top:8px}
+
+/* courses */
+.courses{display:grid;gap:12px}
+@media(min-width:700px){.courses{grid-template-columns:1fr 1fr}}
+.course{background:var(--ink);color:#fff;border-radius:22px;padding:20px;position:relative;overflow:hidden}
+.course.on2{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:var(--sh)}
+.course h3{font-family:Marcellus,serif;font-weight:400;font-size:21px;margin-bottom:4px}
+.course .pr{font-size:22px;font-weight:800;color:var(--gold2);margin:8px 0}
+.course .pr s{font-size:14px;color:#a99;font-weight:600;margin-right:6px}
+.course ul{list-style:none;font-size:13.5px;opacity:.9;margin-bottom:14px}
+.course li{padding:3px 0 3px 18px;position:relative}
+.course li:before{content:"✦";position:absolute;left:0;color:var(--gold2);font-size:11px;top:5px}
+
+/* info / contacts */
+.info{display:grid;gap:10px}
+@media(min-width:700px){.info{grid-template-columns:1fr 1fr}}
+.ibox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px}
+.ibox h4{font-size:14.5px;margin-bottom:5px}
+.ibox p{font-size:13.5px;color:var(--mute)}
+.contacts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+footer{text-align:center;padding:30px 16px 20px;color:var(--mute);font-size:12px}
+footer .brand{align-items:center;margin-bottom:8px}
+
+/* cart button */
+.cartbtn{position:fixed;left:50%;transform:translateX(-50%) translateY(120px);bottom:calc(14px + env(safe-area-inset-bottom));z-index:50;
+  width:min(92vw,460px);display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-radius:40px;
+  background:var(--ink);color:#fff;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .25s}
+.cartbtn.show{transform:translateX(-50%) translateY(0)}
+.cartbtn .cnt{background:var(--gold2);color:var(--ink);border-radius:20px;padding:2px 9px;font-size:13px;margin-right:8px}
+
+/* sheet */
+.ov{position:fixed;inset:0;background:rgba(29,26,27,.45);z-index:60;opacity:0;pointer-events:none;transition:opacity .2s}
+.ov.open{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;background:var(--bg);border-radius:24px 24px 0 0;max-height:92vh;overflow:auto;
+  transform:translateY(105%);transition:transform .28s;max-width:620px;margin:0 auto;padding:8px 16px calc(20px + env(safe-area-inset-bottom))}
+.sheet.open{transform:none}
+.grab{width:42px;height:5px;border-radius:5px;background:var(--line);margin:4px auto 10px}
+.sheet h3{font-family:Marcellus,serif;font-weight:400;font-size:22px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.x{font-family:Manrope,sans-serif;font-size:26px;line-height:1;color:var(--mute);padding:0 4px}
+.ci{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.ci img{width:54px;height:54px;border-radius:12px;object-fit:cover;flex:none;background:var(--pink2)}
+.ci .t{flex:1;min-width:0}
+.ci .t b{display:block;font-size:13.5px}
+.ci .t span{font-size:12px;color:var(--mute)}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:17px;padding:12px 0}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--pink2);padding:4px;border-radius:14px;margin:6px 0 4px}
+.seg button{padding:10px;border-radius:11px;font-weight:700;font-size:13.5px;color:var(--mute)}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.fgrid{display:grid;gap:8px}
+.err{border-color:#d9534f!important}
+.ok{text-align:center;padding:8px 0}
+.ok .big{font-size:44px}
+.ok p{color:var(--mute);font-size:14px;margin:8px 0 14px}
+.ok pre{white-space:pre-wrap;text-align:left;background:#fff;border:1px dashed var(--pinkd);border-radius:12px;padding:12px;font:13px/1.45 Manrope,sans-serif;max-height:200px;overflow:auto;margin-bottom:12px}
+.stack{display:grid;gap:8px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:16px}
+.lb.open{display:flex}
+.lb img{max-height:86vh;border-radius:14px}
+.toast{position:fixed;left:50%;top:76px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:30px;font-size:13.5px;font-weight:600;z-index:90;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hbar">
+    <a class="brand" href="#top"><b>DIYORA</b><i>cake boutique</i></a>
+    <div class="sp"></div>
+    <div class="lang"><button data-l="uz">UZ</button><button data-l="ru">RU</button></div>
+    <a class="tg" href="https://t.me/Diyora_boutique_cake" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.8 15.6l-.4 5.6c.6 0 .8-.3 1.1-.6l2.7-2.6 5.6 4.1c1 .6 1.8.3 2-1L24.5 3.9c.4-1.6-.6-2.3-1.6-1.9L1.2 10.3c-1.5.6-1.5 1.4-.3 1.8l5.6 1.7 12.9-8.1c.6-.4 1.2-.2.7.3"/></svg></a>
+  </div>
+  <nav class="chips" id="chips"></nav>
+</header>
+
+<div class="hero" id="top">
+  <img src="cover.jpg" alt="Diyora Cake Boutique">
+</div>
+<div class="wrap hero-txt">
+  <p data-t="heroP"></p>
+  <div class="hero-btns">
+    <a class="btn btn-d" href="#cakes" data-t="heroB1"></a>
+    <a class="btn btn-l" href="#custom" data-t="heroB2"></a>
+  </div>
+  <div class="facts">
+    <div class="fact"><b data-t="f1b"></b><span data-t="f1"></span></div>
+    <div class="fact"><b data-t="f2b"></b><span data-t="f2"></span></div>
+    <div class="fact"><b data-t="f3b"></b><span data-t="f3"></span></div>
+    <div class="fact"><b data-t="f4b"></b><span data-t="f4"></span></div>
+  </div>
+</div>
+
+<main class="wrap" id="menu"></main>
+
+<div class="wrap">
+  <section id="custom">
+    <div class="sh"><h2 data-t="cusH"></h2><span class="script">custom</span></div>
+    <p class="sub" data-t="cusSub"></p>
+    <div class="custom">
+      <label class="l" data-t="cusSize"></label>
+      <div class="sizes" id="sizes"></div>
+      <label class="l" data-t="cusFill"></label>
+      <div class="fills" id="fills"></div>
+      <label class="l" data-t="cusWish"></label>
+      <textarea id="cWish" rows="3" data-ph="cusWishPh"></textarea>
+      <div class="row" style="margin-top:14px">
+        <div class="price" id="cPrice"></div>
+        <button class="btn btn-g" id="cAdd" data-t="cusAdd"></button>
+      </div>
+      <p class="note" data-t="cusNote"></p>
+    </div>
+  </section>
+
+  <section id="courses">
+    <div class="sh"><h2 data-t="crsH"></h2><span class="script">academy</span></div>
+    <p class="sub" data-t="crsSub"></p>
+    <div class="courses">
+      <div class="course">
+        <h3 data-t="crs1H"></h3>
+        <div class="pr"><s>5 000 000</s>3 500 000 <span style="font-size:14px" data-t="sum"></span></div>
+        <ul data-list="crs1L"></ul>
+        <button class="btn btn-g" data-course="crs1H" data-t="crsBtn"></button>
+      </div>
+      <div class="course on2">
+        <h3 data-t="crs2H"></h3>
+        <div class="pr" style="color:var(--gold)">2 300 000 <span style="font-size:14px" data-t="sum"></span></div>
+        <ul data-list="crs2L"></ul>
+        <button class="btn btn-d" data-course="crs2H" data-t="crsBtn"></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="info">
+    <div class="sh"><h2 data-t="infH"></h2></div>
+    <div class="info" style="margin-top:10px">
+      <div class="ibox"><h4 data-t="i1h"></h4><p data-t="i1"></p></div>
+      <div class="ibox"><h4 data-t="i2h"></h4><p data-t="i2"></p></div>
+      <div class="ibox"><h4 data-t="i3h"></h4><p data-t="i3"></p></div>
+      <div class="ibox"><h4 data-t="i4h"></h4><p data-t="i4"></p></div>
+    </div>
+    <div class="contacts">
+      <a class="btn btn-d" href="tel:+998997677673">📞 +998 99 767 76 73</a>
+      <a class="btn btn-l" href="https://t.me/Diyora_boutique_cake" target="_blank" rel="noopener">✈️ Telegram</a>
+      <a class="btn btn-l" href="https://instagram.com/diyora_cake_boutique_" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="btn btn-l" href="https://yandex.uz/maps/?text=%D0%A2%D0%A2%D0%97-1%2016%2C%20%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82" target="_blank" rel="noopener" data-t="map"></a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="brand"><b>DIYORA</b><i>cake boutique</i></div>
+  <div>© 2026 Diyora Cake Boutique · Toshkent</div>
+</footer>
+
+<button class="cartbtn" id="cartBtn"><span><span class="cnt" id="cCnt">0</span><span data-t="cart"></span></span><span id="cSum"></span></button>
+
+<div class="ov" id="ov"></div>
+<div class="sheet" id="sheet"><div class="grab"></div><div id="sheetBody"></div></div>
+<div class="lb" id="lb"><img id="lbImg" alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script>
+var TG = "Diyora_boutique_cake";
+var PHONE = "+998 99 767 76 73";
+
+/* ---------- MENU ---------- */
+var CATS = [
+  {id:"cakes",   uz:"Tortlar",     ru:"Торты",      s:"cakes"},
+  {id:"rolls",   uz:"Merengali rulet", ru:"Меренговый рулет", s:"rolls"},
+  {id:"trifle",  uz:"Trayfllar va desertlar", ru:"Трайфлы и десерты", s:"trifle"},
+  {id:"art",     uz:"Art Desert",  ru:"Art Desert", s:"art"}
+];
+var SUBS = {
+  cakes:{uz:"Tayyor tortlar — 2–4 kun oldin buyurtma bering",ru:"Готовые торты — заказ за 2–4 дня"},
+  rolls:{uz:"Yengil merengali rulet — butun, yarim yoki bo'lak",ru:"Воздушный меренговый рулет — целый, половинка или кусочек"},
+  trifle:{uz:"Stakanchada porsiyali desertlar",ru:"Порционные десерты в стаканчиках"},
+  art:{uz:"Meva shaklidagi mussli desertlar",ru:"Муссовые десерты в форме фруктов"}
+};
+// p = price, v = variants [{uz,ru,p,img}]
+var MENU = [
+  // cakes
+  {id:"matilda", c:"cakes", n:"Matilda", d:{uz:"Shokoladli",ru:"Шоколадный"}, v:[
+     {uz:"8–10 kishi",ru:"8–10 чел.",p:280000,img:"t02"},
+     {uz:"Yarim",ru:"Половинка",p:140000,img:"t03"},
+     {uz:"Mini",ru:"Мини",p:100000,img:"t04"}]},
+  {id:"matmk", c:"cakes", n:{uz:"Matilda mini qulupnayli",ru:"Matilda мини с клубникой"}, img:"t08", p:120000},
+  {id:"kindert", c:"cakes", n:{uz:"Kinder tortik",ru:"Kinder тортик"}, img:"t09", p:190000, d:{uz:"4–5 kishi",ru:"4–5 чел."}},
+  {id:"mereng", c:"cakes", n:{uz:"Merengali tort",ru:"Меренговый торт"}, img:"t01", p:250000, d:{uz:"6–8 kishi",ru:"6–8 чел."}},
+  {id:"snik", c:"cakes", n:"Snickers", img:"t05", p:290000, d:{uz:"8–10 kishi",ru:"8–10 чел."}},
+  {id:"kiev", c:"cakes", n:{uz:"Kiyevskiy",ru:"Киевский"}, img:"t06", p:320000, d:{uz:"8–10 kishi",ru:"8–10 чел."}},
+  {id:"sanseb", c:"cakes", n:"San Sebastian", img:"t07", p:320000, d:{uz:"8–10 kishi",ru:"8–10 чел."}},
+  // rolls
+  {id:"roll", c:"rolls", n:{uz:"Merengali rulet",ru:"Меренговый рулет"}, d:{uz:"Qulupnay va malina bilan",ru:"С клубникой и малиной"}, v:[
+     {uz:"Butun",ru:"Целый",p:300000,img:"t10"},
+     {uz:"Yarim",ru:"Половинка",p:150000,img:"t11"}]},
+  {id:"rollp", c:"rolls", n:{uz:"Rulet bo'lagi",ru:"Кусочек рулета"}, d:{uz:"Stakanchada",ru:"В стаканчике"}, v:[
+     {uz:"Klassik",ru:"Классический",p:55000,img:"t12"},
+     {uz:"Qulupnayli",ru:"Клубничный",p:55000,img:"t14"},
+     {uz:"Mango",ru:"Манго",p:55000,img:"t13"}]},
+  // trifles
+  {id:"pkinder", c:"trifle", n:"Premium Kinder", img:"d16", p:140000, tag:"⭐ Premium"},
+  {id:"kindery", c:"trifle", n:{uz:"Kinder rezavorli",ru:"Kinder ягодный"}, img:"d14", p:130000, d:{uz:"550 g",ru:"550 г"}},
+  {id:"kinderk", c:"trifle", n:{uz:"Kinder qulupnayli",ru:"Kinder с клубникой"}, img:"d12", p:110000, d:{uz:"550 g",ru:"550 г"}},
+  {id:"kinder", c:"trifle", n:"Kinder", img:"d11", p:95000, d:{uz:"500 g",ru:"500 г"}},
+  {id:"tiram", c:"trifle", n:"Tiramisu", img:"d10", p:95000, d:{uz:"500 g",ru:"500 г"}},
+  {id:"rafa", c:"trifle", n:"Raffaello", img:"d13", p:95000, d:{uz:"500 g",ru:"500 г"}},
+  {id:"snikt", c:"trifle", n:"Snickers", img:"d19", p:95000, d:{uz:"500 g",ru:"500 г"}},
+  {id:"matt", c:"trifle", n:{uz:"Matilda qulupnayli",ru:"Matilda с клубникой"}, img:"d15", p:100000, d:{uz:"500 g",ru:"500 г"}},
+  {id:"dpal", c:"trifle", n:{uz:"Damskiye palchiki",ru:"Дамские пальчики"}, img:"d17", p:90000, d:{uz:"Pista va malina bilan",ru:"С фисташкой и малиной"}},
+  {id:"klsh", c:"trifle", n:{uz:"Shokoladdagi qulupnay",ru:"Клубника в шоколаде"}, img:"d18", p:140000},
+  // art desert
+  {id:"aset", c:"art", n:{uz:"Art Desert to'plami — 4 ta",ru:"Сет Art Desert — 4 шт."}, img:"d20", p:190000, tag:"🎁 Set"},
+  {id:"amix", c:"art", n:"Art Desert Mix", img:"d09", p:250000, tag:"🎁 Mix"},
+  {id:"afm", c:"art", n:{uz:"Pista-malina",ru:"Фисташка-малина"}, img:"d07", p:80000},
+  {id:"amango", c:"art", n:"Mango", img:"d02", p:70000},
+  {id:"acofe", c:"art", n:{uz:"Kofe",ru:"Кофе"}, img:"d01", p:55000},
+  {id:"agol", c:"art", n:{uz:"Golubika",ru:"Голубика"}, img:"d04", p:50000},
+  {id:"acher", c:"art", n:{uz:"Gilos",ru:"Вишня"}, img:"d05", p:50000},
+  {id:"amal", c:"art", n:{uz:"Malina",ru:"Малина"}, img:"d06", p:50000},
+  {id:"alim", c:"art", n:{uz:"Limon",ru:"Лимон"}, img:"d03", p:40000},
+  {id:"aklub", c:"art", n:{uz:"Qulupnay",ru:"Клубника"}, img:"d08", p:40000}
+];
+var SIZES = [
+  {id:"bento",uz:"Bento",ru:"Бенто",p:130000,d:{uz:"1–2 kishi",ru:"1–2 чел."}},
+  {id:"s4",uz:"4–6 kishi",ru:"4–6 чел.",p:240000},
+  {id:"s6",uz:"6–8 kishi",ru:"6–8 чел.",p:300000},
+  {id:"s10",uz:"10–12 kishi",ru:"10–12 чел.",p:400000},
+  {id:"s12",uz:"12–15 kishi",ru:"12–15 чел.",p:500000}
+];
+var FILLS = [
+  {uz:"Kiyevskiy mevali",ru:"Киевский с фруктами"},
+  {uz:"Snickers",ru:"Сникерс"},
+  {uz:"Klassik mevali",ru:"Классический с фруктами"},
+  {uz:"Kinder",ru:"Киндер"},
+  {uz:"Dubayskiy",ru:"Дубайский"},
+  {uz:"Kinder dubayskiy",ru:"Киндер дубайский"},
+  {uz:"Shokoladli",ru:"Шоколадный"}
+];
+
+/* ---------- TEXTS ---------- */
+var T = {
+ uz:{
+  heroP:"Tortlar, trayfllar va Art Desertlar — sevib, sifatli mahsulotlardan tayyorlaymiz. Toshkent bo'ylab yetkazib beramiz.",
+  heroB1:"Menyuni ko'rish", heroB2:"Tort buyurtma qilish",
+  f1b:"2–4 kun oldin", f1:"tortlarga buyurtma",
+  f2b:"Yetkazib berish", f2:"Yandex / Uklon yoki olib ketish",
+  f3b:"Oldindan to'lov", f3:"Payme yoki Click",
+  f4b:"Mirzo Ulug'bek", f4:"TTZ-1, 16-uy",
+  custom:"Buyurtma tort", courses:"Kurslar", info:"Ma'lumot",
+  cusH:"Buyurtma tort", cusSub:"O'lcham va nachinkani tanlang, dizayn istagingizni yozing — Diyora siz bilan bog'lanadi.",
+  cusSize:"1. O'lcham", cusFill:"2. Nachinka", cusWish:"3. Dizayn, yozuv, rang (ixtiyoriy)",
+  cusWishPh:"Masalan: oq-pushti, \"Happy Birthday Malika\" yozuvi, qulupnay bilan",
+  cusAdd:"Savatga qo'shish", cusNote:"Dekor murakkabligiga qarab narx o'zgarishi mumkin. Buyurtma 2–4 kun oldin.",
+  crsH:"Qandolatchilik kurslari", crsSub:"Noldan boshlab o'rgatamiz — retseptlardan tortib sotishgacha.",
+  crs1H:"Oflayn kurs · 1 oy", crs2H:"Onlayn kurs · 1,5 oy",
+  crs1L:["Noldan boshlab","Mobilografiya — mahsulotni chiroyli suratga olish","Instagram va Telegram yuritish","Marketing va birinchi mijozlar"],
+  crs2L:["Uyda o'qish, o'z vaqtingizda","Video darslar va retseptlar","Kurator bilan aloqa","Marketing va sotish asoslari"],
+  crsBtn:"Yozilish", sum:"so'm",
+  infH:"Buyurtma va yetkazish",
+  i1h:"Qanday buyurtma beriladi", i1:"Savatga qo'shing → ma'lumotlarni to'ldiring → buyurtma matni Telegramga yuboriladi. Diyora tasdiqlaydi va to'lov ma'lumotini yuboradi.",
+  i2h:"Muddat", i2:"Tortlarni 2–4 kun oldin buyurtma qiling. Desertlar bo'yicha mavjudligini so'rang.",
+  i3h:"Yetkazib berish", i3:"Yandex yoki Uklon orqali (taksi tarifi bo'yicha) yoki o'zingiz olib ketasiz.",
+  i4h:"Manzil", i4:"Mirzo Ulug'bek tumani, TTZ-1, 16-uy. Mo'ljal: Lokomotiv stadioni.",
+  map:"📍 Xaritada",
+  cart:"Savat", cartH:"Savatingiz", empty:"Savat bo'sh", total:"Jami",
+  next:"Rasmiylashtirish", back:"← Orqaga",
+  name:"Ismingiz", phone:"Telefon", date:"Qaysi kunga", time:"Vaqt (ixtiyoriy)",
+  deliv:"Yetkazib berish", pick:"Olib ketish", addr:"Manzil", comment:"Izoh (ixtiyoriy)",
+  send:"Telegram orqali yuborish", prepay:"Buyurtma oldindan to'lovdan keyin tasdiqlanadi (Payme / Click).",
+  okH:"Buyurtma matni nusxalandi ✅", okP:"Telegram ochiladi — chatga matnni qo'ying (Вставить) va yuboring.",
+  openTg:"Telegramni ochish", call:"Qo'ng'iroq qilish", copyAgain:"Yana nusxalash", done:"Tayyor",
+  added:"Savatga qo'shildi", copied:"Nusxalandi", fillErr:"Ism va telefonni kiriting",
+  oTitle:"🧁 Yangi buyurtma — Diyora Cake Boutique", oName:"Ism", oPhone:"Telefon", oDate:"Sana", oTime:"Vaqt", oType:"Olish usuli", oAddr:"Manzil", oCom:"Izoh", oTot:"Jami", oCus:"Buyurtma tort", oFill:"nachinka", oWish:"istak",
+  crsMsg:"Assalomu alaykum! Kursga yozilmoqchiman: "
+ },
+ ru:{
+  heroP:"Торты, трайфлы и Art Desert — готовим с любовью из качественных продуктов. Доставка по Ташкенту.",
+  heroB1:"Смотреть меню", heroB2:"Заказать торт",
+  f1b:"За 2–4 дня", f1:"заказ тортов",
+  f2b:"Доставка", f2:"Яндекс / Uklon или самовывоз",
+  f3b:"Предоплата", f3:"Payme или Click",
+  f4b:"Мирзо-Улугбек", f4:"ТТЗ-1, дом 16",
+  custom:"Торт на заказ", courses:"Курсы", info:"Инфо",
+  cusH:"Торт на заказ", cusSub:"Выберите размер и начинку, опишите дизайн — Диёра свяжется с вами.",
+  cusSize:"1. Размер", cusFill:"2. Начинка", cusWish:"3. Дизайн, надпись, цвет (необязательно)",
+  cusWishPh:"Например: бело-розовый, надпись \"Happy Birthday Малика\", с клубникой",
+  cusAdd:"В корзину", cusNote:"Цена может меняться в зависимости от сложности декора. Заказ за 2–4 дня.",
+  crsH:"Кондитерские курсы", crsSub:"Обучаем с нуля — от рецептов до продаж.",
+  crs1H:"Офлайн-курс · 1 месяц", crs2H:"Онлайн-курс · 1,5 месяца",
+  crs1L:["С нуля","Мобилография — красивые фото продукции","Ведение Instagram и Telegram","Маркетинг и первые клиенты"],
+  crs2L:["Учёба из дома в своём темпе","Видеоуроки и рецепты","Связь с куратором","Основы маркетинга и продаж"],
+  crsBtn:"Записаться", sum:"сум",
+  infH:"Заказ и доставка",
+  i1h:"Как заказать", i1:"Добавьте в корзину → заполните данные → текст заказа отправляется в Telegram. Диёра подтвердит и пришлёт реквизиты для оплаты.",
+  i2h:"Сроки", i2:"Торты заказывайте за 2–4 дня. Наличие десертов уточняйте.",
+  i3h:"Доставка", i3:"Через Яндекс или Uklon (по тарифу такси) или самовывоз.",
+  i4h:"Адрес", i4:"Мирзо-Улугбекский район, ТТЗ-1, дом 16. Ориентир: стадион «Локомотив».",
+  map:"📍 На карте",
+  cart:"Корзина", cartH:"Ваша корзина", empty:"Корзина пуста", total:"Итого",
+  next:"Оформить", back:"← Назад",
+  name:"Ваше имя", phone:"Телефон", date:"На какую дату", time:"Время (необязательно)",
+  deliv:"Доставка", pick:"Самовывоз", addr:"Адрес", comment:"Комментарий (необязательно)",
+  send:"Отправить через Telegram", prepay:"Заказ подтверждается после предоплаты (Payme / Click).",
+  okH:"Текст заказа скопирован ✅", okP:"Откроется Telegram — вставьте текст в чат и отправьте.",
+  openTg:"Открыть Telegram", call:"Позвонить", copyAgain:"Скопировать ещё раз", done:"Готово",
+  added:"Добавлено в корзину", copied:"Скопировано", fillErr:"Введите имя и телефон",
+  oTitle:"🧁 Новый заказ — Diyora Cake Boutique", oName:"Имя", oPhone:"Телефон", oDate:"Дата", oTime:"Время", oType:"Получение", oAddr:"Адрес", oCom:"Комментарий", oTot:"Итого", oCus:"Торт на заказ", oFill:"начинка", oWish:"пожелания",
+  crsMsg:"Здравствуйте! Хочу записаться на курс: "
+ }
+};
+
+/* ---------- STATE ---------- */
+var lang = "uz";
+try{ lang = localStorage.getItem("dy_lang") || (/^ru/i.test(navigator.language)?"ru":"uz"); }catch(e){}
+var cart = [];  // {key,name:{uz,ru},img,p,q,extra}
+try{ cart = JSON.parse(localStorage.getItem("dy_cart")||"[]")||[]; }catch(e){ cart=[]; }
+var sel = {};   // chosen variant index per item
+var cSize = 1, cFill = 0, delivery = true, step = "cart";
+
+function L(k){ return T[lang][k]; }
+function tx(o){ return typeof o==="string" ? o : (o ? o[lang] : ""); }
+function img(id){ return id + ".jpg"; }
+function money(n){ return n.toLocaleString("ru-RU").replace(/,/g," ") + " " + L("sum"); }
+function $(s){ return document.querySelector(s); }
+function save(){ try{ localStorage.setItem("dy_cart", JSON.stringify(cart)); }catch(e){} }
+function toast(m){ var t=$("#toast"); t.textContent=m; t.classList.add("on"); clearTimeout(toast.t); toast.t=setTimeout(function(){t.classList.remove("on")},1600); }
+function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]}); }
+
+/* ---------- RENDER ---------- */
+function cur(it){ if(!it.v) return {p:it.p,img:it.img}; var v=it.v[sel[it.id]||0]; return {p:v.p,img:v.img,v:v}; }
+function keyOf(it){ return it.v ? it.id+":"+(sel[it.id]||0) : it.id; }
+function qtyOf(k){ for(var i=0;i<cart.length;i++) if(cart[i].key===k) return cart[i].q; return 0; }
+
+function renderMenu(){
+  var h = "";
+  CATS.forEach(function(c){
+    h += '<section id="'+c.id+'"><div class="sh"><h2>'+c[lang]+'</h2><span class="script">'+c.s+'</span></div><p class="sub">'+SUBS[c.id][lang]+'</p><div class="grid">';
+    MENU.filter(function(m){return m.c===c.id}).forEach(function(it){ h += card(it); });
+    h += '</div></section>';
+  });
+  $("#menu").innerHTML = h;
+}
+function card(it){
+  var c = cur(it), k = keyOf(it), q = qtyOf(k);
+  var h = '<div class="card" id="c-'+it.id+'"><div class="ph" data-zoom="'+c.img+'"><img loading="lazy" src="'+img(c.img)+'" alt="'+esc(tx(it.n))+'">'+(it.tag?'<span class="tag">'+it.tag+'</span>':'')+'</div><div class="cb"><h3>'+esc(tx(it.n))+'</h3>';
+  if(it.d) h += '<div class="meta">'+esc(tx(it.d))+'</div>';
+  if(it.v){ h += '<div class="vars">'; it.v.forEach(function(v,i){ h += '<button class="var'+((sel[it.id]||0)===i?' on':'')+'" data-var="'+it.id+'" data-i="'+i+'">'+esc(v[lang])+'</button>'; }); h += '</div>'; }
+  h += '<div class="row"><div class="price">'+money(c.p)+'</div>';
+  h += q ? '<div class="qty"><button data-dec="'+it.id+'">−</button><span>'+q+'</span><button data-inc="'+it.id+'">+</button></div>' : '<button class="add" data-inc="'+it.id+'" aria-label="+">+</button>';
+  h += '</div></div></div>';
+  return h;
+}
+function rerenderCard(id){ var it = MENU.filter(function(m){return m.id===id})[0]; var el=$("#c-"+id); if(el){ el.outerHTML = card(it); } }
+
+function renderChips(){
+  var list = CATS.map(function(c){return [c.id,c[lang]]}).concat([["custom",L("custom")],["courses",L("courses")],["info",L("info")]]);
+  $("#chips").innerHTML = list.map(function(x){return '<a class="chip" href="#'+x[0]+'" data-chip="'+x[0]+'">'+x[1]+'</a>'}).join("");
+}
+function renderCustom(){
+  $("#sizes").innerHTML = SIZES.map(function(s,i){ return '<button class="size'+(i===cSize?' on':'')+'" data-size="'+i+'"><b>'+s[lang]+(s.d?' <small style="font-weight:500;color:var(--mute)">· '+s.d[lang]+'</small>':'')+'</b><span>'+money(s.p)+'</span></button>'; }).join("");
+  $("#fills").innerHTML = FILLS.map(function(f,i){ return '<button class="fill'+(i===cFill?' on':'')+'" data-fill="'+i+'">'+f[lang]+'</button>'; }).join("");
+  $("#cPrice").textContent = money(SIZES[cSize].p);
+}
+function applyTexts(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(function(e){ e.textContent = L(e.getAttribute("data-t")); });
+  document.querySelectorAll("[data-ph]").forEach(function(e){ e.placeholder = L(e.getAttribute("data-ph")); });
+  document.querySelectorAll("[data-list]").forEach(function(e){ e.innerHTML = L(e.getAttribute("data-list")).map(function(x){return "<li>"+x+"</li>"}).join(""); });
+  document.querySelectorAll(".lang button").forEach(function(b){ b.classList.toggle("on", b.getAttribute("data-l")===lang); });
+}
+function renderAll(){ applyTexts(); renderChips(); renderMenu(); renderCustom(); updateCartBtn(); if($("#sheet").classList.contains("open")) renderSheet(); }
+
+/* ---------- CART ---------- */
+function total(){ return cart.reduce(function(s,x){return s+x.p*x.q},0); }
+function count(){ return cart.reduce(function(s,x){return s+x.q},0); }
+function updateCartBtn(){
+  var n=count(); $("#cCnt").textContent=n; $("#cSum").textContent=money(total());
+  $("#cartBtn").classList.toggle("show", n>0);
+}
+function addItem(id){
+  var it = MENU.filter(function(m){return m.id===id})[0], c=cur(it), k=keyOf(it);
+  var ex = cart.filter(function(x){return x.key===k})[0];
+  if(ex) ex.q++; else cart.push({key:k, name: it.v ? {uz:tx2(it.n,"uz")+" — "+c.v.uz, ru:tx2(it.n,"ru")+" — "+c.v.ru} : {uz:tx2(it.n,"uz"),ru:tx2(it.n,"ru")}, img:c.img, p:c.p, q:1});
+  save(); rerenderCard(id); updateCartBtn(); toast(L("added"));
+}
+function tx2(o,l){ return typeof o==="string"?o:o[l]; }
+function decItem(k){
+  for(var i=0;i<cart.length;i++) if(cart[i].key===k){ cart[i].q--; if(cart[i].q<=0) cart.splice(i,1); break; }
+  save(); updateCartBtn();
+}
+
+/* ---------- SHEET ---------- */
+function openSheet(s){ step=s||"cart"; renderSheet(); $("#ov").classList.add("open"); $("#sheet").classList.add("open"); document.body.style.overflow="hidden"; }
+function closeSheet(){ $("#ov").classList.remove("open"); $("#sheet").classList.remove("open"); document.body.style.overflow=""; }
+var form = {name:"",phone:"+998 ",date:"",time:"",addr:"",com:""};
+try{ var sf=JSON.parse(localStorage.getItem("dy_form")||"null"); if(sf){ form.name=sf.name||""; form.phone=sf.phone||"+998 "; form.addr=sf.addr||""; } }catch(e){}
+var lastText = "";
+
+function renderSheet(){
+  var b = $("#sheetBody"), h="";
+  if(step==="cart"){
+    h += '<h3>'+L("cartH")+'<button class="x" data-close>×</button></h3>';
+    if(!cart.length){ h += '<p style="color:var(--mute);padding:20px 0;text-align:center">'+L("empty")+'</p>'; b.innerHTML=h; return; }
+    cart.forEach(function(x,i){
+      h += '<div class="ci">'+(x.img?'<img src="'+img(x.img)+'" alt="">':'<img src="icon.jpg" alt="">')+'<div class="t"><b>'+esc(x.name[lang])+'</b>'+(x.extra?'<span>'+esc(x.extra[lang])+'</span><br>':'')+'<span>'+money(x.p)+'</span></div><div class="qty"><button data-cdec="'+i+'">−</button><span>'+x.q+'</span><button data-cinc="'+i+'">+</button></div></div>';
+    });
+    h += '<div class="tot"><span>'+L("total")+'</span><span>'+money(total())+'</span></div>';
+    h += '<button class="btn btn-d" style="width:100%" data-step="form">'+L("next")+'</button>';
+  } else if(step==="form"){
+    var today = new Date(); var min = today.toISOString().slice(0,10);
+    h += '<h3><button class="x" style="font-size:15px;font-weight:700" data-step="cart">'+L("back")+'</button><button class="x" data-close>×</button></h3>';
+    h += '<div class="fgrid">';
+    h += '<input id="fName" placeholder="'+L("name")+'" value="'+esc(form.name)+'" autocomplete="name">';
+    h += '<input id="fPhone" type="tel" placeholder="'+L("phone")+'" value="'+esc(form.phone)+'" autocomplete="tel">';
+    h += '<label class="l">'+L("date")+'</label><input id="fDate" type="date" min="'+min+'" value="'+esc(form.date)+'">';
+    h += '<input id="fTime" placeholder="'+L("time")+'" value="'+esc(form.time)+'">';
+    h += '<div class="seg"><button data-del="1" class="'+(delivery?'on':'')+'">🚕 '+L("deliv")+'</button><button data-del="0" class="'+(!delivery?'on':'')+'">🏠 '+L("pick")+'</button></div>';
+    if(delivery) h += '<input id="fAddr" placeholder="'+L("addr")+'" value="'+esc(form.addr)+'" autocomplete="street-address">';
+    else h += '<p class="note" style="margin:0 0 4px">📍 '+L("i4")+'</p>';
+    h += '<textarea id="fCom" rows="2" placeholder="'+L("comment")+'">'+esc(form.com)+'</textarea>';
+    h += '</div><div class="tot"><span>'+L("total")+'</span><span>'+money(total())+'</span></div>';
+    h += '<button class="btn btn-g" style="width:100%" id="sendBtn">✈️ '+L("send")+'</button><p class="note" style="text-align:center">'+L("prepay")+'</p>';
+  } else if(step==="ok"){
+    h += '<div class="ok"><div class="big">🧁</div><h3 style="justify-content:center">'+L("okH")+'</h3><p>'+L("okP")+'</p><pre>'+esc(lastText)+'</pre><div class="stack">';
+    h += '<a class="btn btn-g" href="https://t.me/'+TG+'" target="_blank" rel="noopener">✈️ '+L("openTg")+'</a>';
+    h += '<button class="btn btn-l" id="copyAgain">📋 '+L("copyAgain")+'</button>';
+    h += '<a class="btn btn-l" href="tel:+998997677673">📞 '+L("call")+'</a>';
+    h += '<button class="btn btn-d" id="doneBtn">'+L("done")+'</button></div></div>';
+  }
+  b.innerHTML = h;
+}
+function readForm(){
+  ["Name","Phone","Date","Time","Addr","Com"].forEach(function(f){ var e=$("#f"+f); if(e) form[f.toLowerCase()]=e.value; });
+  try{ localStorage.setItem("dy_form", JSON.stringify({name:form.name,phone:form.phone,addr:form.addr})); }catch(e){}
+}
+function buildText(){
+  var t = L("oTitle")+"\n\n";
+  cart.forEach(function(x){ t += "• "+x.name[lang]+(x.extra?" ("+x.extra[lang]+")":"")+" × "+x.q+" = "+money(x.p*x.q)+"\n"; });
+  t += "\n"+L("oTot")+": "+money(total())+"\n\n";
+  t += L("oName")+": "+form.name+"\n"+L("oPhone")+": "+form.phone+"\n";
+  if(form.date){ var d=form.date.split("-"); t += L("oDate")+": "+d[2]+"."+d[1]+"."+d[0]+"\n"; }
+  if(form.time) t += L("oTime")+": "+form.time+"\n";
+  t += L("oType")+": "+(delivery?L("deliv"):L("pick"))+"\n";
+  if(delivery && form.addr) t += L("oAddr")+": "+form.addr+"\n";
+  if(form.com) t += L("oCom")+": "+form.com+"\n";
+  return t;
+}
+function copy(text){
+  if(navigator.clipboard && window.isSecureContext){ return navigator.clipboard.writeText(text).catch(function(){ fallbackCopy(text); }); }
+  fallbackCopy(text); return Promise.resolve();
+}
+function fallbackCopy(text){
+  var ta=document.createElement("textarea"); ta.value=text; ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta); ta.select();
+  try{ document.execCommand("copy"); }catch(e){} document.body.removeChild(ta);
+}
+
+/* ---------- EVENTS ---------- */
+document.addEventListener("click", function(e){
+  var t = e.target.closest("button,a,.ph,.ov,.lb"); if(!t) return;
+  var a;
+  if(t.classList.contains("ov")) return closeSheet();
+  if(t.classList.contains("lb")) return t.classList.remove("open");
+  if((a=t.getAttribute("data-l"))){ lang=a; try{localStorage.setItem("dy_lang",a)}catch(x){} return renderAll(); }
+  if((a=t.getAttribute("data-zoom"))){ $("#lbImg").src=img(a); return $("#lb").classList.add("open"); }
+  if((a=t.getAttribute("data-var"))){ sel[a]=+t.getAttribute("data-i"); return rerenderCard(a); }
+  if((a=t.getAttribute("data-inc"))) return addItem(a);
+  if((a=t.getAttribute("data-dec"))){ var it=MENU.filter(function(m){return m.id===a})[0]; decItem(keyOf(it)); return rerenderCard(a); }
+  if((a=t.getAttribute("data-size"))!==null && t.classList.contains("size")){ cSize=+a; return renderCustom(); }
+  if((a=t.getAttribute("data-fill"))!==null && t.classList.contains("fill")){ cFill=+a; return renderCustom(); }
+  if(t.id==="cAdd"){
+    var s=SIZES[cSize], f=FILLS[cFill], w=$("#cWish").value.trim();
+    var key="custom:"+cSize+":"+cFill+":"+w;
+    var ex=cart.filter(function(x){return x.key===key})[0];
+    if(ex) ex.q++; else cart.push({key:key, img:null, p:s.p, q:1,
+      name:{uz:T.uz.oCus+" · "+s.uz, ru:T.ru.oCus+" · "+s.ru},
+      extra:{uz:T.uz.oFill+": "+f.uz+(w?"; "+T.uz.oWish+": "+w:""), ru:T.ru.oFill+": "+f.ru+(w?"; "+T.ru.oWish+": "+w:"")}});
+    save(); updateCartBtn(); toast(L("added")); return;
+  }
+  if((a=t.getAttribute("data-course"))){
+    var msg = L("crsMsg")+L(a); copy(msg); toast(L("copied")); window.open("https://t.me/"+TG,"_blank"); return;
+  }
+  if(t.id==="cartBtn") return openSheet("cart");
+  if(t.hasAttribute("data-close")) return closeSheet();
+  if((a=t.getAttribute("data-step"))){ if(step==="form") readForm(); step=a; return renderSheet(); }
+  if((a=t.getAttribute("data-cinc"))!==null){ cart[+a].q++; save(); updateCartBtn(); renderMenu(); return renderSheet(); }
+  if((a=t.getAttribute("data-cdec"))!==null){ cart[+a].q--; if(cart[+a].q<=0) cart.splice(+a,1); save(); updateCartBtn(); renderMenu(); if(!cart.length){ closeSheet(); return; } return renderSheet(); }
+  if((a=t.getAttribute("data-del"))!==null){ readForm(); delivery = a==="1"; return renderSheet(); }
+  if(t.id==="sendBtn"){
+    readForm();
+    var ok=true;
+    if(form.name.trim().length<2){ $("#fName").classList.add("err"); ok=false; }
+    if(form.phone.replace(/\D/g,"").length<9){ $("#fPhone").classList.add("err"); ok=false; }
+    if(!ok){ toast(L("fillErr")); return; }
+    lastText = buildText();
+    copy(lastText);
+    step="ok"; renderSheet();
+    setTimeout(function(){ window.open("https://t.me/"+TG,"_blank"); }, 450);
+    return;
+  }
+  if(t.id==="copyAgain"){ copy(lastText); return toast(L("copied")); }
+  if(t.id==="doneBtn"){ cart=[]; save(); updateCartBtn(); renderMenu(); closeSheet(); return; }
+});
+
+/* active chip on scroll */
+var secIds = ["cakes","rolls","trifle","art","custom","courses","info"];
+window.addEventListener("scroll", function(){
+  var y = window.scrollY + 140, act = null;
+  secIds.forEach(function(id){ var s=document.getElementById(id); if(s && s.offsetTop<=y) act=id; });
+  document.querySelectorAll(".chip").forEach(function(c){
+    var on = c.getAttribute("data-chip")===act;
+    if(on && !c.classList.contains("on")){ c.classList.add("on"); c.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"}); }
+    else if(!on) c.classList.remove("on");
+  });
+}, {passive:true});
+
+renderAll();
+</script>
+</body>
+</html>
