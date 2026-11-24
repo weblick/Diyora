@@ -45,7 +45,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,250,251,.92);backdro
 .tg svg{width:19px;height:19px;fill:#2a8bd0}
 .chips{display:flex;gap:8px;overflow-x:auto;padding:8px 16px 10px;scrollbar-width:none;max-width:1100px;margin:0 auto}
 .chips::-webkit-scrollbar{display:none}
-.chip{flex:none;padding:8px 14px;border-radius:30px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:600;white-space:nowrap;text-decoration:none}
+.chip{flex:none;cursor:pointer;padding:8px 14px;border-radius:30px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:600;white-space:nowrap;text-decoration:none}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 
 /* hero */
@@ -166,6 +166,9 @@ footer .brand{align-items:center;margin-bottom:8px}
 .lb{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:16px}
 .lb.open{display:flex}
 .lb img{max-height:86vh;border-radius:14px}
+.tab{display:none;animation:fi .25s}.tab.on{display:block}@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+#content{min-height:60vh}
+.btn[disabled]{opacity:.6}
 .toast{position:fixed;left:50%;top:76px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:30px;font-size:13.5px;font-weight:600;z-index:90;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
 .toast.on{opacity:1}
 </style>
@@ -188,8 +191,8 @@ footer .brand{align-items:center;margin-bottom:8px}
 <div class="wrap hero-txt">
   <p data-t="heroP"></p>
   <div class="hero-btns">
-    <a class="btn btn-d" href="#cakes" data-t="heroB1"></a>
-    <a class="btn btn-l" href="#custom" data-t="heroB2"></a>
+    <button class="btn btn-d" data-tab="cakes" data-t="heroB1"></button>
+    <button class="btn btn-l" data-tab="custom" data-t="heroB2"></button>
   </div>
   <div class="facts">
     <div class="fact"><b data-t="f1b"></b><span data-t="f1"></span></div>
@@ -199,10 +202,10 @@ footer .brand{align-items:center;margin-bottom:8px}
   </div>
 </div>
 
-<main class="wrap" id="menu"></main>
+<div id="content"><main class="wrap" id="menu"></main>
 
 <div class="wrap">
-  <section id="custom">
+  <section id="custom" class="tab">
     <div class="sh"><h2 data-t="cusH"></h2><span class="script">custom</span></div>
     <p class="sub" data-t="cusSub"></p>
     <div class="custom">
@@ -220,7 +223,7 @@ footer .brand{align-items:center;margin-bottom:8px}
     </div>
   </section>
 
-  <section id="courses">
+  <section id="courses" class="tab">
     <div class="sh"><h2 data-t="crsH"></h2><span class="script">academy</span></div>
     <p class="sub" data-t="crsSub"></p>
     <div class="courses">
@@ -239,7 +242,7 @@ footer .brand{align-items:center;margin-bottom:8px}
     </div>
   </section>
 
-  <section id="info">
+  <section id="info" class="tab">
     <div class="sh"><h2 data-t="infH"></h2></div>
     <div class="info" style="margin-top:10px">
       <div class="ibox"><h4 data-t="i1h"></h4><p data-t="i1"></p></div>
@@ -254,7 +257,7 @@ footer .brand{align-items:center;margin-bottom:8px}
       <a class="btn btn-l" href="https://yandex.uz/maps/?text=%D0%A2%D0%A2%D0%97-1%2016%2C%20%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82" target="_blank" rel="noopener" data-t="map"></a>
     </div>
   </section>
-</div>
+</div></div>
 
 <footer>
   <div class="brand"><b>DIYORA</b><i>cake boutique</i></div>
@@ -270,6 +273,9 @@ footer .brand{align-items:center;margin-bottom:8px}
 
 <script>
 var TG = "Diyora_boutique_cake";
+var BOT = "9097395075:AAFJYjhZP3tml-dLMCCgbjKwXM6tavbp3Zs";
+var CHAT = "-1003956117026";
+var curTab = "cakes", sending = false;
 var PHONE = "+998 99 767 76 73";
 
 /* ---------- MENU ---------- */
@@ -366,7 +372,7 @@ var T = {
   crs2L:["Uyda o'qish, o'z vaqtingizda","Video darslar va retseptlar","Kurator bilan aloqa","Marketing va sotish asoslari"],
   crsBtn:"Yozilish", sum:"so'm",
   infH:"Buyurtma va yetkazish",
-  i1h:"Qanday buyurtma beriladi", i1:"Savatga qo'shing → ma'lumotlarni to'ldiring → buyurtma matni Telegramga yuboriladi. Diyora tasdiqlaydi va to'lov ma'lumotini yuboradi.",
+  i1h:"Qanday buyurtma beriladi", i1:"Savatga qo'shing → ma'lumotlarni to'ldiring → «Buyurtma berish». Buyurtma darhol Diyoraga keladi, u siz bilan bog'lanib, to'lov ma'lumotini yuboradi.",
   i2h:"Muddat", i2:"Tortlarni 2–4 kun oldin buyurtma qiling. Desertlar bo'yicha mavjudligini so'rang.",
   i3h:"Yetkazib berish", i3:"Yandex yoki Uklon orqali (taksi tarifi bo'yicha) yoki o'zingiz olib ketasiz.",
   i4h:"Manzil", i4:"Mirzo Ulug'bek tumani, TTZ-1, 16-uy. Mo'ljal: Lokomotiv stadioni.",
@@ -375,7 +381,7 @@ var T = {
   next:"Rasmiylashtirish", back:"← Orqaga",
   name:"Ismingiz", phone:"Telefon", date:"Qaysi kunga", time:"Vaqt (ixtiyoriy)",
   deliv:"Yetkazib berish", pick:"Olib ketish", addr:"Manzil", comment:"Izoh (ixtiyoriy)",
-  send:"Telegram orqali yuborish", prepay:"Buyurtma oldindan to'lovdan keyin tasdiqlanadi (Payme / Click).",
+  send:"Buyurtma berish", sending:"Yuborilmoqda…", okBotH:"Buyurtma qabul qilindi ✅", okBotP:"Buyurtma raqami: {id}. Diyora tez orada siz bilan bog'lanadi va to'lov ma'lumotini yuboradi.", netErr:"Yuborilmadi — Telegram orqali yuboring", oNum:"Buyurtma", oLang:"Mijoz tili", oSrc:"🌐 Saytdan", prepay:"Buyurtma oldindan to'lovdan keyin tasdiqlanadi (Payme / Click).",
   okH:"Buyurtma matni nusxalandi ✅", okP:"Telegram ochiladi — chatga matnni qo'ying (Вставить) va yuboring.",
   openTg:"Telegramni ochish", call:"Qo'ng'iroq qilish", copyAgain:"Yana nusxalash", done:"Tayyor",
   added:"Savatga qo'shildi", copied:"Nusxalandi", fillErr:"Ism va telefonni kiriting",
@@ -400,7 +406,7 @@ var T = {
   crs2L:["Учёба из дома в своём темпе","Видеоуроки и рецепты","Связь с куратором","Основы маркетинга и продаж"],
   crsBtn:"Записаться", sum:"сум",
   infH:"Заказ и доставка",
-  i1h:"Как заказать", i1:"Добавьте в корзину → заполните данные → текст заказа отправляется в Telegram. Диёра подтвердит и пришлёт реквизиты для оплаты.",
+  i1h:"Как заказать", i1:"Добавьте в корзину → заполните данные → «Оформить заказ». Заказ сразу приходит Диёре, она свяжется с вами и пришлёт реквизиты для оплаты.",
   i2h:"Сроки", i2:"Торты заказывайте за 2–4 дня. Наличие десертов уточняйте.",
   i3h:"Доставка", i3:"Через Яндекс или Uklon (по тарифу такси) или самовывоз.",
   i4h:"Адрес", i4:"Мирзо-Улугбекский район, ТТЗ-1, дом 16. Ориентир: стадион «Локомотив».",
@@ -409,7 +415,7 @@ var T = {
   next:"Оформить", back:"← Назад",
   name:"Ваше имя", phone:"Телефон", date:"На какую дату", time:"Время (необязательно)",
   deliv:"Доставка", pick:"Самовывоз", addr:"Адрес", comment:"Комментарий (необязательно)",
-  send:"Отправить через Telegram", prepay:"Заказ подтверждается после предоплаты (Payme / Click).",
+  send:"Оформить заказ", sending:"Отправляем…", okBotH:"Заказ принят ✅", okBotP:"Номер заказа: {id}. Диёра скоро свяжется с вами и пришлёт реквизиты для оплаты.", netErr:"Не отправилось — отправьте через Telegram", oNum:"Заказ", oLang:"Язык клиента", oSrc:"🌐 С сайта", prepay:"Заказ подтверждается после предоплаты (Payme / Click).",
   okH:"Текст заказа скопирован ✅", okP:"Откроется Telegram — вставьте текст в чат и отправьте.",
   openTg:"Открыть Telegram", call:"Позвонить", copyAgain:"Скопировать ещё раз", done:"Готово",
   added:"Добавлено в корзину", copied:"Скопировано", fillErr:"Введите имя и телефон",
@@ -443,7 +449,7 @@ function qtyOf(k){ for(var i=0;i<cart.length;i++) if(cart[i].key===k) return car
 function renderMenu(){
   var h = "";
   CATS.forEach(function(c){
-    h += '<section id="'+c.id+'"><div class="sh"><h2>'+c[lang]+'</h2><span class="script">'+c.s+'</span></div><p class="sub">'+SUBS[c.id][lang]+'</p><div class="grid">';
+    h += '<section id="'+c.id+'" class="tab'+(curTab===c.id?' on':'')+'"><div class="sh"><h2>'+c[lang]+'</h2><span class="script">'+c.s+'</span></div><p class="sub">'+SUBS[c.id][lang]+'</p><div class="grid">';
     MENU.filter(function(m){return m.c===c.id}).forEach(function(it){ h += card(it); });
     h += '</div></section>';
   });
@@ -463,7 +469,7 @@ function rerenderCard(id){ var it = MENU.filter(function(m){return m.id===id})[0
 
 function renderChips(){
   var list = CATS.map(function(c){return [c.id,c[lang]]}).concat([["custom",L("custom")],["courses",L("courses")],["info",L("info")]]);
-  $("#chips").innerHTML = list.map(function(x){return '<a class="chip" href="#'+x[0]+'" data-chip="'+x[0]+'">'+x[1]+'</a>'}).join("");
+  $("#chips").innerHTML = list.map(function(x){return '<button class="chip'+(curTab===x[0]?' on':'')+'" data-tab="'+x[0]+'">'+x[1]+'</button>'}).join("");
 }
 function renderCustom(){
   $("#sizes").innerHTML = SIZES.map(function(s,i){ return '<button class="size'+(i===cSize?' on':'')+'" data-size="'+i+'"><b>'+s[lang]+(s.d?' <small style="font-weight:500;color:var(--mute)">· '+s.d[lang]+'</small>':'')+'</b><span>'+money(s.p)+'</span></button>'; }).join("");
@@ -477,7 +483,18 @@ function applyTexts(){
   document.querySelectorAll("[data-list]").forEach(function(e){ e.innerHTML = L(e.getAttribute("data-list")).map(function(x){return "<li>"+x+"</li>"}).join(""); });
   document.querySelectorAll(".lang button").forEach(function(b){ b.classList.toggle("on", b.getAttribute("data-l")===lang); });
 }
-function renderAll(){ applyTexts(); renderChips(); renderMenu(); renderCustom(); updateCartBtn(); if($("#sheet").classList.contains("open")) renderSheet(); }
+function renderAll(){ applyTexts(); renderChips(); renderMenu(); renderCustom(); showTab(curTab,false); updateCartBtn(); if($("#sheet").classList.contains("open")) renderSheet(); }
+
+function showTab(id, scroll){
+  curTab = id;
+  document.querySelectorAll(".tab").forEach(function(t){ t.classList.toggle("on", t.id===id); });
+  document.querySelectorAll(".chip").forEach(function(c){
+    var on = c.getAttribute("data-tab")===id; c.classList.toggle("on", on);
+    if(on){ var n=$("#chips"); n.scrollTo({left: c.offsetLeft - (n.clientWidth - c.offsetWidth)/2, behavior:"smooth"}); }
+  });
+  if(scroll){ var top = $("#content").getBoundingClientRect().top + window.scrollY - $("header").offsetHeight - 6;
+    if(window.scrollY > top || scroll==="force") window.scrollTo({top:top, behavior:"smooth"}); }
+}
 
 /* ---------- CART ---------- */
 function total(){ return cart.reduce(function(s,x){return s+x.p*x.q},0); }
@@ -503,7 +520,7 @@ function openSheet(s){ step=s||"cart"; renderSheet(); $("#ov").classList.add("op
 function closeSheet(){ $("#ov").classList.remove("open"); $("#sheet").classList.remove("open"); document.body.style.overflow=""; }
 var form = {name:"",phone:"+998 ",date:"",time:"",addr:"",com:""};
 try{ var sf=JSON.parse(localStorage.getItem("dy_form")||"null"); if(sf){ form.name=sf.name||""; form.phone=sf.phone||"+998 "; form.addr=sf.addr||""; } }catch(e){}
-var lastText = "";
+var lastText = "", lastId = "", CLIENT_LANG = "uz";
 
 function renderSheet(){
   var b = $("#sheetBody"), h="";
@@ -528,7 +545,11 @@ function renderSheet(){
     else h += '<p class="note" style="margin:0 0 4px">📍 '+L("i4")+'</p>';
     h += '<textarea id="fCom" rows="2" placeholder="'+L("comment")+'">'+esc(form.com)+'</textarea>';
     h += '</div><div class="tot"><span>'+L("total")+'</span><span>'+money(total())+'</span></div>';
-    h += '<button class="btn btn-g" style="width:100%" id="sendBtn">✈️ '+L("send")+'</button><p class="note" style="text-align:center">'+L("prepay")+'</p>';
+    h += '<button class="btn btn-g" style="width:100%" id="sendBtn">'+L(sending?"sending":"send")+'</button><p class="note" style="text-align:center">'+L("prepay")+'</p>';
+  } else if(step==="okbot"){
+    h += '<div class="ok"><div class="big">🎂</div><h3 style="justify-content:center">'+L("okBotH")+'</h3><p>'+esc(L("okBotP").replace("{id}", lastId))+'</p><div class="stack">';
+    h += '<a class="btn btn-l" href="tel:+998997677673">📞 '+L("call")+'</a>';
+    h += '<button class="btn btn-d" data-close>'+L("done")+'</button></div></div>';
   } else if(step==="ok"){
     h += '<div class="ok"><div class="big">🧁</div><h3 style="justify-content:center">'+L("okH")+'</h3><p>'+L("okP")+'</p><pre>'+esc(lastText)+'</pre><div class="stack">';
     h += '<a class="btn btn-g" href="https://t.me/'+TG+'" target="_blank" rel="noopener">✈️ '+L("openTg")+'</a>';
@@ -542,8 +563,8 @@ function readForm(){
   ["Name","Phone","Date","Time","Addr","Com"].forEach(function(f){ var e=$("#f"+f); if(e) form[f.toLowerCase()]=e.value; });
   try{ localStorage.setItem("dy_form", JSON.stringify({name:form.name,phone:form.phone,addr:form.addr})); }catch(e){}
 }
-function buildText(){
-  var t = L("oTitle")+"\n\n";
+function buildText(id){
+  var t = L("oTitle")+(id?"\n"+L("oNum")+" #"+id:"")+"\n\n";
   cart.forEach(function(x){ t += "• "+x.name[lang]+(x.extra?" ("+x.extra[lang]+")":"")+" × "+x.q+" = "+money(x.p*x.q)+"\n"; });
   t += "\n"+L("oTot")+": "+money(total())+"\n\n";
   t += L("oName")+": "+form.name+"\n"+L("oPhone")+": "+form.phone+"\n";
@@ -552,6 +573,7 @@ function buildText(){
   t += L("oType")+": "+(delivery?L("deliv"):L("pick"))+"\n";
   if(delivery && form.addr) t += L("oAddr")+": "+form.addr+"\n";
   if(form.com) t += L("oCom")+": "+form.com+"\n";
+  if(id) t += "\n"+L("oSrc")+" · "+L("oLang")+": "+(T[CLIENT_LANG]===T.ru?"RU":"UZ")+"\n";
   return t;
 }
 function copy(text){
@@ -570,6 +592,7 @@ document.addEventListener("click", function(e){
   if(t.classList.contains("ov")) return closeSheet();
   if(t.classList.contains("lb")) return t.classList.remove("open");
   if((a=t.getAttribute("data-l"))){ lang=a; try{localStorage.setItem("dy_lang",a)}catch(x){} return renderAll(); }
+  if((a=t.getAttribute("data-tab"))) return showTab(a, "force");
   if((a=t.getAttribute("data-zoom"))){ $("#lbImg").src=img(a); return $("#lb").classList.add("open"); }
   if((a=t.getAttribute("data-var"))){ sel[a]=+t.getAttribute("data-i"); return rerenderCard(a); }
   if((a=t.getAttribute("data-inc"))) return addItem(a);
@@ -600,27 +623,28 @@ document.addEventListener("click", function(e){
     if(form.name.trim().length<2){ $("#fName").classList.add("err"); ok=false; }
     if(form.phone.replace(/\D/g,"").length<9){ $("#fPhone").classList.add("err"); ok=false; }
     if(!ok){ toast(L("fillErr")); return; }
+    if(sending) return;
+    lastId = String(Date.now()).slice(-5);
     lastText = buildText();
-    copy(lastText);
-    step="ok"; renderSheet();
-    setTimeout(function(){ window.open("https://t.me/"+TG,"_blank"); }, 450);
+    CLIENT_LANG = lang; var keep = lang; lang = "uz"; var gText = buildText(lastId); lang = keep;
+    sending = true; renderSheet();
+    var body = new URLSearchParams(); body.append("chat_id", CHAT); body.append("text", gText);
+    var done = false, timer = setTimeout(function(){ if(!done){ done=true; fail(); } }, 12000);
+    function fail(){ sending=false; copy(lastText); step="ok"; renderSheet(); toast(L("netErr")); }
+    fetch("https://api.telegram.org/bot"+BOT+"/sendMessage", {method:"POST", body:body})
+      .then(function(r){ return r.json(); })
+      .then(function(j){ if(done) return; done=true; clearTimeout(timer); sending=false;
+        if(!j || !j.ok) return fail();
+        cart=[]; save(); updateCartBtn(); renderMenu(); form.date=""; form.time=""; form.com="";
+        step="okbot"; renderSheet(); })
+      .catch(function(){ if(done) return; done=true; clearTimeout(timer); fail(); });
     return;
   }
   if(t.id==="copyAgain"){ copy(lastText); return toast(L("copied")); }
   if(t.id==="doneBtn"){ cart=[]; save(); updateCartBtn(); renderMenu(); closeSheet(); return; }
 });
 
-/* active chip on scroll */
-var secIds = ["cakes","rolls","trifle","art","custom","courses","info"];
-window.addEventListener("scroll", function(){
-  var y = window.scrollY + 140, act = null;
-  secIds.forEach(function(id){ var s=document.getElementById(id); if(s && s.offsetTop<=y) act=id; });
-  document.querySelectorAll(".chip").forEach(function(c){
-    var on = c.getAttribute("data-chip")===act;
-    if(on && !c.classList.contains("on")){ c.classList.add("on"); c.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"}); }
-    else if(!on) c.classList.remove("on");
-  });
-}, {passive:true});
+
 
 renderAll();
 </script>
