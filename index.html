@@ -41,6 +41,18 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,250,251,.92);backdro
 .lang{display:flex;border:1px solid var(--line);border-radius:30px;overflow:hidden;background:#fff}
 .lang button{padding:6px 11px;font-size:12px;font-weight:700;color:var(--mute)}
 .lang button.on{background:var(--ink);color:#fff}
+.hcart{position:relative;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff}
+.hcart svg{width:20px;height:20px}
+.hcart span{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--gold2);color:var(--ink);font-size:11px;font-weight:800;display:grid;place-items:center;border:2px solid var(--bg)}
+.hcart span.z{display:none}
+.req{color:#c0475f}
+.pay{text-align:center}
+.pay img{width:min(240px,70vw);margin:6px auto 8px;border-radius:14px;border:1px solid var(--line)}
+.cardno{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin:8px 0;text-align:left}
+.cardno b{font-size:16px;letter-spacing:.04em}
+.cardno small{display:block;color:var(--mute);font-size:11.5px}
+.steps{text-align:left;font-size:13px;color:var(--mute);background:var(--pink2);border-radius:12px;padding:10px 12px;margin:8px 0 12px}
+.steps li{margin-left:16px;padding:1px 0}
 .tg{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--pink2);text-decoration:none}
 .tg svg{width:19px;height:19px;fill:#2a8bd0}
 .chips{display:flex;gap:8px;overflow-x:auto;padding:8px 16px 10px;scrollbar-width:none;max-width:1100px;margin:0 auto}
@@ -50,8 +62,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,250,251,.92);backdro
 
 /* hero */
 .hero{background:var(--pink);position:relative;overflow:hidden}
-.hero img{width:100%;max-width:900px;margin:0 auto;aspect-ratio:1280/711;object-fit:cover}
-.hero-txt{text-align:center;padding:6px 16px 26px;margin-top:-8px}
+.hero img{width:100%;max-width:900px;margin:0 auto;aspect-ratio:3/2;object-fit:cover}
+.hero-txt{text-align:center;padding:14px 16px 26px}
 .hero-txt p{color:#5b4a50;font-size:14.5px;max-width:520px;margin:0 auto 14px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:40px;font-weight:700;font-size:14.5px;text-decoration:none}
 .btn-d{background:var(--ink);color:#fff}
@@ -180,13 +192,14 @@ footer .brand{align-items:center;margin-bottom:8px}
     <a class="brand" href="#top"><b>DIYORA</b><i>cake boutique</i></a>
     <div class="sp"></div>
     <div class="lang"><button data-l="uz">UZ</button><button data-l="ru">RU</button></div>
+    <button class="hcart" id="hCart" aria-label="Savat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7"/></svg><span id="hCnt">0</span></button>
     <a class="tg" href="https://t.me/Diyora_boutique_cake" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.8 15.6l-.4 5.6c.6 0 .8-.3 1.1-.6l2.7-2.6 5.6 4.1c1 .6 1.8.3 2-1L24.5 3.9c.4-1.6-.6-2.3-1.6-1.9L1.2 10.3c-1.5.6-1.5 1.4-.3 1.8l5.6 1.7 12.9-8.1c.6-.4 1.2-.2.7.3"/></svg></a>
   </div>
   <nav class="chips" id="chips"></nav>
 </header>
 
 <div class="hero" id="top">
-  <img src="cover.jpg" alt="Diyora Cake Boutique">
+  <img src="cover.jpg" alt="Diyora Cake Boutique — desertlar">
 </div>
 <div class="wrap hero-txt">
   <p data-t="heroP"></p>
@@ -372,7 +385,7 @@ var T = {
   crs2L:["Uyda o'qish, o'z vaqtingizda","Video darslar va retseptlar","Kurator bilan aloqa","Marketing va sotish asoslari"],
   crsBtn:"Yozilish", sum:"so'm",
   infH:"Buyurtma va yetkazish",
-  i1h:"Qanday buyurtma beriladi", i1:"Savatga qo'shing → ma'lumotlarni to'ldiring → «Buyurtma berish». Buyurtma darhol Diyoraga keladi, u siz bilan bog'lanib, to'lov ma'lumotini yuboradi.",
+  i1h:"Qanday buyurtma beriladi", i1:"Savatga qo'shing → ma'lumotlarni to'ldiring → QR yoki karta orqali to'lov. Buyurtma darhol Diyoraga keladi va u siz bilan bog'lanadi.",
   i2h:"Muddat", i2:"Tortlarni 2–4 kun oldin buyurtma qiling. Desertlar bo'yicha mavjudligini so'rang.",
   i3h:"Yetkazib berish", i3:"Yandex yoki Uklon orqali (taksi tarifi bo'yicha) yoki o'zingiz olib ketasiz.",
   i4h:"Manzil", i4:"Mirzo Ulug'bek tumani, TTZ-1, 16-uy. Mo'ljal: Lokomotiv stadioni.",
@@ -381,10 +394,10 @@ var T = {
   next:"Rasmiylashtirish", back:"← Orqaga",
   name:"Ismingiz", phone:"Telefon", date:"Qaysi kunga", time:"Vaqt (ixtiyoriy)",
   deliv:"Yetkazib berish", pick:"Olib ketish", addr:"Manzil", comment:"Izoh (ixtiyoriy)",
-  send:"Buyurtma berish", sending:"Yuborilmoqda…", okBotH:"Buyurtma qabul qilindi ✅", okBotP:"Buyurtma raqami: {id}. Diyora tez orada siz bilan bog'lanadi va to'lov ma'lumotini yuboradi.", netErr:"Yuborilmadi — Telegram orqali yuboring", oNum:"Buyurtma", oLang:"Mijoz tili", oSrc:"🌐 Saytdan", prepay:"Buyurtma oldindan to'lovdan keyin tasdiqlanadi (Payme / Click).",
+  send:"Buyurtma berish", toPay:"To'lovga o'tish", reqNote:"majburiy maydonlar", payH:"To'lov", saveQr:"QR-kodni saqlash", cardLbl:"Karta raqami (Paynet)", copy:"Nusxa", paidBtn:"To'ladim — buyurtma berish", laterBtn:"Keyinroq to'layman", payNote:"Buyurtma to'lov tekshirilgandan keyin tasdiqlanadi.", paySteps:["QR-kodni saqlang yoki karta raqamini nusxalang","Payme, Click yoki bank ilovasida to'lang","«To'ladim» tugmasini bosing"], okUnpaid:"To'lovdan keyin buyurtma tasdiqlanadi.", oPaid:"💳 To'lov: ✅ mijoz to'ladim dedi — tekshiring", oUnpaid:"💳 To'lov: ⏳ hali to'lanmagan", sending:"Yuborilmoqda…", okBotH:"Buyurtma qabul qilindi ✅", okBotP:"Buyurtma raqami: {id}. Diyora tez orada siz bilan bog'lanadi.", netErr:"Yuborilmadi — Telegram orqali yuboring", oNum:"Buyurtma", oLang:"Mijoz tili", oSrc:"🌐 Saytdan", prepay:"Buyurtma oldindan to'lovdan keyin tasdiqlanadi (Payme / Click).",
   okH:"Buyurtma matni nusxalandi ✅", okP:"Telegram ochiladi — chatga matnni qo'ying (Вставить) va yuboring.",
   openTg:"Telegramni ochish", call:"Qo'ng'iroq qilish", copyAgain:"Yana nusxalash", done:"Tayyor",
-  added:"Savatga qo'shildi", copied:"Nusxalandi", fillErr:"Ism va telefonni kiriting",
+  added:"Savatga qo'shildi", copied:"Nusxalandi", fillErr:"Ism, telefon va manzilni kiriting",
   oTitle:"🧁 Yangi buyurtma — Diyora Cake Boutique", oName:"Ism", oPhone:"Telefon", oDate:"Sana", oTime:"Vaqt", oType:"Olish usuli", oAddr:"Manzil", oCom:"Izoh", oTot:"Jami", oCus:"Buyurtma tort", oFill:"nachinka", oWish:"istak",
   crsMsg:"Assalomu alaykum! Kursga yozilmoqchiman: "
  },
@@ -406,7 +419,7 @@ var T = {
   crs2L:["Учёба из дома в своём темпе","Видеоуроки и рецепты","Связь с куратором","Основы маркетинга и продаж"],
   crsBtn:"Записаться", sum:"сум",
   infH:"Заказ и доставка",
-  i1h:"Как заказать", i1:"Добавьте в корзину → заполните данные → «Оформить заказ». Заказ сразу приходит Диёре, она свяжется с вами и пришлёт реквизиты для оплаты.",
+  i1h:"Как заказать", i1:"Добавьте в корзину → заполните данные → оплата по QR или карте. Заказ сразу приходит Диёре, она свяжется с вами.",
   i2h:"Сроки", i2:"Торты заказывайте за 2–4 дня. Наличие десертов уточняйте.",
   i3h:"Доставка", i3:"Через Яндекс или Uklon (по тарифу такси) или самовывоз.",
   i4h:"Адрес", i4:"Мирзо-Улугбекский район, ТТЗ-1, дом 16. Ориентир: стадион «Локомотив».",
@@ -415,10 +428,10 @@ var T = {
   next:"Оформить", back:"← Назад",
   name:"Ваше имя", phone:"Телефон", date:"На какую дату", time:"Время (необязательно)",
   deliv:"Доставка", pick:"Самовывоз", addr:"Адрес", comment:"Комментарий (необязательно)",
-  send:"Оформить заказ", sending:"Отправляем…", okBotH:"Заказ принят ✅", okBotP:"Номер заказа: {id}. Диёра скоро свяжется с вами и пришлёт реквизиты для оплаты.", netErr:"Не отправилось — отправьте через Telegram", oNum:"Заказ", oLang:"Язык клиента", oSrc:"🌐 С сайта", prepay:"Заказ подтверждается после предоплаты (Payme / Click).",
+  send:"Оформить заказ", toPay:"Перейти к оплате", reqNote:"обязательные поля", payH:"Оплата", saveQr:"Сохранить QR-код", cardLbl:"Номер карты (Paynet)", copy:"Копировать", paidBtn:"Оплатил — оформить заказ", laterBtn:"Оплачу позже", payNote:"Заказ подтверждается после проверки оплаты.", paySteps:["Сохраните QR-код или скопируйте номер карты","Оплатите в Payme, Click или приложении банка","Нажмите «Оплатил»"], okUnpaid:"Заказ подтвердится после оплаты.", oPaid:"💳 To'lov: ✅ mijoz to'ladim dedi — tekshiring", oUnpaid:"💳 To'lov: ⏳ hali to'lanmagan", sending:"Отправляем…", okBotH:"Заказ принят ✅", okBotP:"Номер заказа: {id}. Диёра скоро свяжется с вами.", netErr:"Не отправилось — отправьте через Telegram", oNum:"Заказ", oLang:"Язык клиента", oSrc:"🌐 С сайта", prepay:"Заказ подтверждается после предоплаты (Payme / Click).",
   okH:"Текст заказа скопирован ✅", okP:"Откроется Telegram — вставьте текст в чат и отправьте.",
   openTg:"Открыть Telegram", call:"Позвонить", copyAgain:"Скопировать ещё раз", done:"Готово",
-  added:"Добавлено в корзину", copied:"Скопировано", fillErr:"Введите имя и телефон",
+  added:"Добавлено в корзину", copied:"Скопировано", fillErr:"Введите имя, телефон и адрес",
   oTitle:"🧁 Новый заказ — Diyora Cake Boutique", oName:"Имя", oPhone:"Телефон", oDate:"Дата", oTime:"Время", oType:"Получение", oAddr:"Адрес", oCom:"Комментарий", oTot:"Итого", oCus:"Торт на заказ", oFill:"начинка", oWish:"пожелания",
   crsMsg:"Здравствуйте! Хочу записаться на курс: "
  }
@@ -500,7 +513,7 @@ function showTab(id, scroll){
 function total(){ return cart.reduce(function(s,x){return s+x.p*x.q},0); }
 function count(){ return cart.reduce(function(s,x){return s+x.q},0); }
 function updateCartBtn(){
-  var n=count(); $("#cCnt").textContent=n; $("#cSum").textContent=money(total());
+  var n=count(); var hc=$("#hCnt"); if(hc){ hc.textContent=n; hc.classList.toggle("z", n===0); } $("#cCnt").textContent=n; $("#cSum").textContent=money(total());
   $("#cartBtn").classList.toggle("show", n>0);
 }
 function addItem(id){
@@ -520,7 +533,7 @@ function openSheet(s){ step=s||"cart"; renderSheet(); $("#ov").classList.add("op
 function closeSheet(){ $("#ov").classList.remove("open"); $("#sheet").classList.remove("open"); document.body.style.overflow=""; }
 var form = {name:"",phone:"+998 ",date:"",time:"",addr:"",com:""};
 try{ var sf=JSON.parse(localStorage.getItem("dy_form")||"null"); if(sf){ form.name=sf.name||""; form.phone=sf.phone||"+998 "; form.addr=sf.addr||""; } }catch(e){}
-var lastText = "", lastId = "", CLIENT_LANG = "uz";
+var lastText = "", lastId = "", lastPaid = false, CLIENT_LANG = "uz";
 
 function renderSheet(){
   var b = $("#sheetBody"), h="";
@@ -536,18 +549,29 @@ function renderSheet(){
     var today = new Date(); var min = today.toISOString().slice(0,10);
     h += '<h3><button class="x" style="font-size:15px;font-weight:700" data-step="cart">'+L("back")+'</button><button class="x" data-close>×</button></h3>';
     h += '<div class="fgrid">';
-    h += '<input id="fName" placeholder="'+L("name")+'" value="'+esc(form.name)+'" autocomplete="name">';
-    h += '<input id="fPhone" type="tel" placeholder="'+L("phone")+'" value="'+esc(form.phone)+'" autocomplete="tel">';
+    h += '<input id="fName" placeholder="'+L("name")+' *" value="'+esc(form.name)+'" autocomplete="name">';
+    h += '<input id="fPhone" type="tel" placeholder="'+L("phone")+' *" value="'+esc(form.phone)+'" autocomplete="tel">';
     h += '<label class="l">'+L("date")+'</label><input id="fDate" type="date" min="'+min+'" value="'+esc(form.date)+'">';
     h += '<input id="fTime" placeholder="'+L("time")+'" value="'+esc(form.time)+'">';
     h += '<div class="seg"><button data-del="1" class="'+(delivery?'on':'')+'">🚕 '+L("deliv")+'</button><button data-del="0" class="'+(!delivery?'on':'')+'">🏠 '+L("pick")+'</button></div>';
-    if(delivery) h += '<input id="fAddr" placeholder="'+L("addr")+'" value="'+esc(form.addr)+'" autocomplete="street-address">';
+    if(delivery) h += '<input id="fAddr" placeholder="'+L("addr")+' *" value="'+esc(form.addr)+'" autocomplete="street-address">';
     else h += '<p class="note" style="margin:0 0 4px">📍 '+L("i4")+'</p>';
     h += '<textarea id="fCom" rows="2" placeholder="'+L("comment")+'">'+esc(form.com)+'</textarea>';
     h += '</div><div class="tot"><span>'+L("total")+'</span><span>'+money(total())+'</span></div>';
-    h += '<button class="btn btn-g" style="width:100%" id="sendBtn">'+L(sending?"sending":"send")+'</button><p class="note" style="text-align:center">'+L("prepay")+'</p>';
+    h += '<p class="note" style="margin:0 0 8px"><span class="req">*</span> '+L("reqNote")+'</p>';
+    h += '<button class="btn btn-g" style="width:100%" id="toPay">'+L("toPay")+' →</button>';
+  } else if(step==="pay"){
+    h += '<h3><button class="x" style="font-size:15px;font-weight:700" data-step="form">'+L("back")+'</button><button class="x" data-close>×</button></h3>';
+    h += '<div class="pay"><h3 style="justify-content:center;margin-bottom:2px">'+L("payH")+'</h3><div class="price" style="font-size:24px">'+money(total())+'</div>';
+    h += '<img src="qr.jpg" alt="QR">';
+    h += '<a class="btn btn-l" href="qr.jpg" download="Diyora-QR.jpg" style="width:100%">⬇️ '+L("saveQr")+'</a>';
+    h += '<div class="cardno"><div><small>'+L("cardLbl")+'</small><b>8888 0140 2207 9280</b></div><button class="btn btn-d" style="padding:9px 14px" id="copyCard">'+L("copy")+'</button></div>';
+    h += '<ol class="steps">'+L("paySteps").map(function(x){return "<li>"+x+"</li>"}).join("")+'</ol>';
+    h += '<div class="stack"><button class="btn btn-g" id="sendBtn" data-paid="1"'+(sending?" disabled":"")+'>'+(sending?L("sending"):"✅ "+L("paidBtn"))+'</button>';
+    h += '<button class="btn btn-l" id="sendBtn2" data-paid="0"'+(sending?" disabled":"")+'>'+L("laterBtn")+'</button></div>';
+    h += '<p class="note">'+L("payNote")+'</p></div>';
   } else if(step==="okbot"){
-    h += '<div class="ok"><div class="big">🎂</div><h3 style="justify-content:center">'+L("okBotH")+'</h3><p>'+esc(L("okBotP").replace("{id}", lastId))+'</p><div class="stack">';
+    h += '<div class="ok"><div class="big">🎂</div><h3 style="justify-content:center">'+L("okBotH")+'</h3><p>'+esc(L("okBotP").replace("{id}", lastId))+(lastPaid?"":" "+L("okUnpaid"))+'</p><div class="stack">';
     h += '<a class="btn btn-l" href="tel:+998997677673">📞 '+L("call")+'</a>';
     h += '<button class="btn btn-d" data-close>'+L("done")+'</button></div></div>';
   } else if(step==="ok"){
@@ -573,6 +597,7 @@ function buildText(id){
   t += L("oType")+": "+(delivery?L("deliv"):L("pick"))+"\n";
   if(delivery && form.addr) t += L("oAddr")+": "+form.addr+"\n";
   if(form.com) t += L("oCom")+": "+form.com+"\n";
+  if(id) t += "\n"+(lastPaid?L("oPaid"):L("oUnpaid"))+"\n";
   if(id) t += "\n"+L("oSrc")+" · "+L("oLang")+": "+(T[CLIENT_LANG]===T.ru?"RU":"UZ")+"\n";
   return t;
 }
@@ -586,6 +611,7 @@ function fallbackCopy(text){
 }
 
 /* ---------- EVENTS ---------- */
+document.addEventListener("input", function(e){ if(e.target.classList) e.target.classList.remove("err"); });
 document.addEventListener("click", function(e){
   var t = e.target.closest("button,a,.ph,.ov,.lb"); if(!t) return;
   var a;
@@ -611,18 +637,24 @@ document.addEventListener("click", function(e){
   if((a=t.getAttribute("data-course"))){
     var msg = L("crsMsg")+L(a); copy(msg); toast(L("copied")); window.open("https://t.me/"+TG,"_blank"); return;
   }
-  if(t.id==="cartBtn") return openSheet("cart");
+  if(t.id==="cartBtn"||t.id==="hCart") return openSheet("cart");
   if(t.hasAttribute("data-close")) return closeSheet();
   if((a=t.getAttribute("data-step"))){ if(step==="form") readForm(); step=a; return renderSheet(); }
   if((a=t.getAttribute("data-cinc"))!==null){ cart[+a].q++; save(); updateCartBtn(); renderMenu(); return renderSheet(); }
   if((a=t.getAttribute("data-cdec"))!==null){ cart[+a].q--; if(cart[+a].q<=0) cart.splice(+a,1); save(); updateCartBtn(); renderMenu(); if(!cart.length){ closeSheet(); return; } return renderSheet(); }
   if((a=t.getAttribute("data-del"))!==null){ readForm(); delivery = a==="1"; return renderSheet(); }
-  if(t.id==="sendBtn"){
+  if(t.id==="toPay"){
     readForm();
     var ok=true;
     if(form.name.trim().length<2){ $("#fName").classList.add("err"); ok=false; }
-    if(form.phone.replace(/\D/g,"").length<9){ $("#fPhone").classList.add("err"); ok=false; }
-    if(!ok){ toast(L("fillErr")); return; }
+    if(form.phone.replace(/\D/g,"").replace(/^998/,"").length<9){ $("#fPhone").classList.add("err"); ok=false; }
+    if(delivery && form.addr.trim().length<4){ $("#fAddr").classList.add("err"); ok=false; }
+    if(!ok){ toast(L("fillErr")); var f=document.querySelector(".err"); if(f) f.focus(); return; }
+    step="pay"; renderSheet(); $("#sheet").scrollTop=0; return;
+  }
+  if(t.id==="copyCard"){ copy("8888014022079280"); return toast(L("copied")); }
+  if(t.id==="sendBtn"||t.id==="sendBtn2"){
+    lastPaid = t.getAttribute("data-paid")==="1";
     if(sending) return;
     lastId = String(Date.now()).slice(-5);
     lastText = buildText();
